@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: dra-isis-site
+    restart: unless-stopped
+    networks:
+      - DrIsisNET
+    labels:
+      - "traefik.enable=true"
+      
+      # Regras de Rota
+      - "traefik.http.routers.draisis.rule=Host(`draisisandrade.com`) || Host(`www.draisisandrade.com`)"
+      
+      # Entrypoint (HTTPS no seu Traefik é 'websecure')
+      - "traefik.http.routers.draisis.entrypoints=websecure"
+      
+      # Certificado SSL Let's Encrypt
+      - "traefik.http.routers.draisis.tls.certresolver=letsencryptresolver"
+      
+      # Porta do Container
+      - "traefik.http.services.draisis.loadbalancer.server.port=80"
+
+networks:
+  DrIsisNET:
+    external: true

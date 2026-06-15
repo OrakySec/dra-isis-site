@@ -1,0 +1,368 @@
+/* ============================================
+   DRA. ÍSIS ANDRADE — DESIGN SYSTEM
+   Paleta: Chocolate Escuro + Creme + Cobre
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+/* ---- TOKENS ---- */
+:root {
+  --chocolate:     #3D2010;
+  --chocolate-mid: #5C3320;
+  --chocolate-deep:#1A0D05;
+  --cream:         #F5E6CE;
+  --cream-light:   #FDF8F2;
+  --champagne:     #E8C99A;
+  --copper:        #C48B5A;
+  --copper-dark:   #A67240;
+  --copper-light:  #D4A574;
+  --white-warm:    #FEFAF5;
+  --text-dark:     #1A0D05;
+  --text-mid:      #5C3320;
+  --text-light:    #FDF8F2;
+  --text-muted:    #9E7B5A;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Montserrat', sans-serif;
+  --font-cursive: 'Pinyon Script', cursive;
+
+  --radius-sm:  8px;
+  --radius-md:  16px;
+  --radius-lg:  32px;
+  --radius-xl:  48px;
+
+  --shadow-soft:   0 4px 24px rgba(61, 32, 16, 0.10);
+  --shadow-medium: 0 8px 40px rgba(61, 32, 16, 0.18);
+  --shadow-strong: 0 16px 64px rgba(61, 32, 16, 0.28);
+  --shadow-copper: 0 8px 32px rgba(196, 139, 90, 0.30);
+
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul { list-style: none; }
+
+/* ---- TYPOGRAPHY ---- */
+.serif { font-family: var(--font-serif); }
+.sans  { font-family: var(--font-sans); }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.label--light {
+  color: var(--champagne);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--copper) 0%, var(--copper-dark) 100%);
+  color: var(--white-warm);
+  box-shadow: var(--shadow-copper);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(196, 139, 90, 0.45);
+  background: linear-gradient(135deg, var(--copper-light) 0%, var(--copper) 100%);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--copper);
+  color: var(--copper);
+}
+
+.btn--outline:hover {
+  background: var(--copper);
+  color: var(--white-warm);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-copper);
+}
+
+.btn--outline-light {
+  background: transparent;
+  border: 1.5px solid rgba(253, 248, 242, 0.5);
+  color: var(--white-warm);
+}
+
+.btn--outline-light:hover {
+  background: rgba(253, 248, 242, 0.1);
+  border-color: var(--white-warm);
+  transform: translateY(-2px);
+}
+
+.btn--whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.btn--whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ---- SECTIONS ---- */
+.section {
+  padding: 96px 0;
+}
+
+.section--dark {
+  background-color: var(--chocolate);
+  color: var(--white-warm);
+}
+
+.section--darker {
+  background-color: var(--chocolate-deep);
+  color: var(--white-warm);
+}
+
+.section--cream {
+  background-color: var(--cream);
+}
+
+.section--light {
+  background-color: var(--cream-light);
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Para páginas de serviço - container mais largo */
+.container--wide {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 12px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.section-title--light {
+  color: var(--text-light);
+}
+
+.section-title--light em {
+  color: var(--champagne);
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.section-subtitle--light {
+  color: rgba(253, 248, 242, 0.65);
+}
+
+/* ---- DIVIDER ---- */
+.divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--copper), var(--champagne));
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+/* ---- COPPER LINE ---- */
+.copper-line {
+  display: inline-block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--copper);
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 139, 90, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(196, 139, 90, 0); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+
+/* ---- FLOATING WHATSAPP ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+  /* Garante camada de composição própria — sem animação que cause jitter */
+  will-change: transform;
+  transform: translateZ(0);
+  transition: box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+  pointer-events: none;
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--copper);
+  border-radius: 3px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.78rem;
+  }
+}
