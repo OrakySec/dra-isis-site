@@ -263,5 +263,20 @@
   </footer>
 
   <script src="../js/main.js"></script>
+
+<!-- WhatsApp Conversion Tracking (Google Ads) -->
+<script>
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var isWhatsApp = href.includes('wa.me') || href.includes('api.whatsapp.com');
+    if (isWhatsApp && typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11051005989/I5JMCNSbtcQcEKXww5Up'
+      });
+    }
+  });
+</script>
 </body>
 </html>
