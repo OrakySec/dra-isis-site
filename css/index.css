@@ -635,3 +635,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* DESKTOP LAYOUT IMPROVEMENTS */
+@media (min-width: 768px) {
+  /* Hero changes for wider screens */
+  .hero__name {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+  .hero__photo-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+  
+  /* Services Grid to 2 columns on tablet/small desktop */
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  /* Locations Grid to side-by-side */
+  .locations__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Services Grid to 4 columns on large desktop */
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

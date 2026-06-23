@@ -366,3 +366,13 @@ h1, h2, h3, h4 {
     font-size: 0.78rem;
   }
 }
+
+/* DESKTOP LAYOUT IMPROVEMENTS */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+  }
+  .container--wide {
+    max-width: 1400px;
+  }
+}
