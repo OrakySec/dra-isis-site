@@ -370,9 +370,9 @@ h1, h2, h3, h4 {
 /* DESKTOP LAYOUT IMPROVEMENTS */
 @media (min-width: 768px) {
   .container {
-    max-width: 1200px;
+    max-width: 900px; /* Reduzido de 1200px para os quadros ficarem mais finos */
   }
   .container--wide {
-    max-width: 1400px;
+    max-width: 1100px;
   }
 }
