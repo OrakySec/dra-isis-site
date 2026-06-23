@@ -663,8 +663,8 @@
 }
 
 @media (min-width: 1024px) {
-  /* Services Grid to 4 columns on large desktop */
+  /* Services Grid to 2 columns (2x2) on large desktop to prevent squeezing */
   .services__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
